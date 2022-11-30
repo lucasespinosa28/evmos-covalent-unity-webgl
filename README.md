@@ -80,3 +80,31 @@ Given chain_id and wallet address, return all transactions along with their deco
 ```Csharp
  public static async Task<TransactionsAddress.Request> AsyncGetTransactionsAddress(string address, bool noLogs, bool blockSignedAtAsc,int pageNumber, int pageSize)
 ```
+### Covalent.NFT
+#### Get NFT token IDs for contract
+Given chain_id and contract_address, return a list of all token IDs for the NFT contract on the blockchain.
+
+**[contract]:** Smart contract address./
+**[pageNumber]:** The specific page to be returned./
+**[pageSize]:** The number of results per page.
+```Csharp
+public static async Task<NFTTokenIDsContract.Request> AsyncGetNFTTokenIDsContract(string contract, int pageNumber, int pageSize)
+```
+#### Get NFT transactions for contract
+Given chain_id, contract_address and token_id, return a list of transactions.
+
+**[contract]:** Smart contract address.\
+**[tokenId]:** The token ID\
+**[pageNumber]:** The specific page to be returned.\
+**[pageSize]:** The number of results per page.
+```Csharp
+public static async Task<GetNFTTransactions.Request> AsyncGetNFTTransactionsContract(string contract, int tokenId, int pageNumber, int pageSize)
+```
+#### Get NFT external metadata for contract
+Given chain_id, contract_address and token_id, fetch and return the external metadata. Both ERC721 as well as ERC1155 standards are supported.
+
+**[contractAddress]:** Smart contract address.\
+**[tokenId]:** The token ID.
+```Csharp
+public static async Task<NFTExternalMetadata.Request> AsyncGetNFTExternalMetadata(string contractAddress,int tokenId)
+```
