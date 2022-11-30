@@ -108,3 +108,57 @@ Given chain_id, contract_address and token_id, fetch and return the external met
 ```Csharp
 public static async Task<NFTExternalMetadata.Request> AsyncGetNFTExternalMetadata(string contractAddress,int tokenId)
 ```
+
+## Covalent.Base
+#### Get a block
+Given chain_id and block_height, return a single block at block_height. If block_height is set to the value latest, return the latest block available.
+
+**[blockHeight]:** The height of the block.
+```Csharp
+ public static async Task<Block.Request> AsyncGetblock(string blockHeight)
+```
+#### Get block heights
+Given chain_id , start_date and end_date, return all the block height(s) of a particular chain within a date range. If the end_date is set to latest, return every block height from the start_date to now.
+
+**[startDate]:** The start datetime of the block height(s). (yyyy-MM-ddTHH:mm:ssZ), eg: 2020-01-01 or 2020-01-01T03:36:50z.\
+**[endDate]:** The ending datetime of the block height(s). (yyyy-MM-ddTHH:mm:ssZ), eg: 2020-01-02 or 2020-01-02T03:36:50z.\
+**[pageNumber]:** The specific page to be returned.\
+**[pageSize]:** The number of results per page.
+```Csharp
+public static asyncpageSizeck.Request> AsyncGetBlockHeight(string startDate,string endDate,int pageNumber, int pageSize)
+```
+#### Get log events by contract address
+Given chain_id and contract address, return a paginated list of decoded log events emitted by a particular smart contract.
+
+**[address]:** Passing in an ENS resolves automatically.\
+**[startingBlock]:** Starting block to define a block range.\
+**[endingBlock]:** Ending block to define a block range. Passing in latest uses the latest block height.\
+**[pageNumber]:** The specific page to be returned.\
+**[pageSize]:** The number of results per page.
+```Csharp
+public static async Task<LogEventsContract.Request> AsyncGetLogEventsContract(string address, long startingBlock, long endingBlock, int pageNumber, int pageSize)
+```
+#### Get log events by topic hash(es)
+Given chain_id and topic hash(es), return a paginated list of decoded log events with one or more topic hashes separated by a comma.
+
+**[topic]:** Topic hash value from log records. \
+**[secondaryTopics]:** Additional topic hash(es) to filter on -- padded & unpadded address fields are supported. \
+**[startingBlock]:** Starting block to define a block range.\
+**[endingBlock]:** Ending block to define a block range. Passing in latest uses the latest block height.\
+**[senderAddress]:** Topic hash value from log records.
+**[pageNumber]:** The specific page to be returned.\
+**[pageSize]:** The number of results per page.
+```Csharp
+ public static async Task<LogEventsTopic.Request> AsyncGetLogEventsTopic(string topic, long startingBlock, long endingBlock, string secondaryTopics, string senderAddress, int pageNumber, int pageSize )
+```
+#### Get all chains
+Returns a list of all chains.
+
+```Csharp
+   public static async Task<AllChains.Request> AsyncGetAllChains()
+```
+#### Get all chain statuses
+Returns a list of all chain statuses.
+```Csharp
+public static async Task<AllChainsStatuses.Request> AsyncGetAllChainStatuses()
+```
