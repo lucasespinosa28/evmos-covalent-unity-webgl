@@ -4,14 +4,17 @@
 
 # Wallet
 # covalent
-```Csharp
-Covalent.Settings
-```
+
+### Covalent.Settings
 Set aa api key to access covalent Api.
 ```Csharp
   public static string Apikey;
 ```
 Get or Set chain id, default is EVMOS Testnet 9000.
 ```Csharp
-   public static string ChainId = "9000";
+   public static string ChainId;
+```
+Use mainnet to get EVMOS mainnet id or Testnet for it id.
+```Csharp
+  public static void SetChainId(string id)
 ```
