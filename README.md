@@ -58,3 +58,25 @@ Given chain_id and wallet address, return a paginated list of token holders. If 
 ```Csharp
   public static async Task<TokenHoldersBlockHeight.Request> AsyncGetTokenHoldersBlockHeight(string address,string blockHeight, long startingBlock,long endingBlock)
 ```
+### Covalent.Transactions
+#### Get a transaction
+Given chain_id and tx_hash, return the transaction data with their decoded event logs.
+
+**[txHash]:** Hex encoded transaction hash.\
+**[noLogs]:** Setting this to true will omit decoded event logs, resulting in lighter and faster responses. By default it's set to false.\
+**[pageNumber]:** The specific page to be returned.\
+**[pageSize]:** The number of results per page.
+```Csharp
+public static async Task<GetTransactions.Request> AsyncGetTransactions(string txHash, bool noLogs, int pageNumber, int pageSize)
+```
+#### Get transactions for address
+Given chain_id and wallet address, return all transactions along with their decoded log events. This endpoint does a deep-crawl of the blockchain to retrieve all kinds of transactions that references the address including indexed topics within the event logs.
+
+**[address]:** Passing in an ENS resolves automatically.\
+**[noLogs]:** Setting this to true will omit decoded event logs, resulting in lighter and faster responses. By default it's set to false.\
+**[blockSignedAtAsc]:** Sort the transactions in chronological ascending order. By default, it's set to false and returns transactions in chronological descending order.\
+**[pageNumber]:** The specific page to be returned.\
+**[pageSize]:** The number of results per page.
+```Csharp
+ public static async Task<TransactionsAddress.Request> AsyncGetTransactionsAddress(string address, bool noLogs, bool blockSignedAtAsc,int pageNumber, int pageSize)
+```
