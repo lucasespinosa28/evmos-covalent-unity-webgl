@@ -1,5 +1,4 @@
 using System;
-using Covalent;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,6 +10,9 @@ public class MenuScript : MonoBehaviour
 
     [SerializeField] 
     public String Contract = "0x4e604349cd91c223cc92202f754b23a66a3e76bb";
+    [SerializeField] 
+    public string ApiKey = "";
+    
     private  Label BalanceLabel;
     private Button connectBTN;
     private Button FetchAccountBTN;
@@ -82,6 +84,7 @@ public class MenuScript : MonoBehaviour
         try
         {
            // var result = await Covalent.Balance.AsyncGetTokenBalancesAddress("", true, true);
+           Covalent.Settings.Apikey = ApiKey;
             var result = await Covalent.Balance.AsyncGetTokenBalancesAddress(EVM.Wallet.getAddress, true, true);
             foreach (var item in result.data.items)
             {
