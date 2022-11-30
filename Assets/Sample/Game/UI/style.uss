@@ -1,0 +1,14 @@
+.Container {
+    display: flex;
+    background-color: rgba(33, 32, 49, 255);
+    width: 1220px;
+    height: 610px;
+    margin-left: 73px;
+    margin-top: 80px;
+}
+.Hidden{
+    display: none;
+}
+.Show{
+    display: flex;
+}

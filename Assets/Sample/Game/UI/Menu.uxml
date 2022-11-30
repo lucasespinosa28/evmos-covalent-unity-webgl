@@ -1,0 +1,40 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Sample/Game/UI/style.uss?fileID=7433441132597879392&amp;guid=7658e353c066d5f4bbe2aa27cfc63484&amp;type=3#style" />
+    <ui:VisualElement name="Container" class="Container">
+        <ui:VisualElement>
+            <ui:Label tabindex="-1" text="Demo game for EVMOS and Covalent, Game have an smart contract that mint NFT at EVMOS Testnet Demo game for EVMOS and Covalent, the game has a smart contract that generates NFT on EVMOS Testnet and fetch using Covalent api.fetch using Covalent api" display-tooltip-when-elided="true" style="color: rgb(238, 238, 238); white-space: normal; font-size: 16px;" />
+            <ui:VisualElement style="flex-direction: column; flex-wrap: nowrap; justify-content: center; align-items: center;">
+                <ui:VisualElement style="flex-direction: column;">
+                    <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Sample/Game/Metadata/Images/Pineapple.png?fileID=2800000&amp;guid=1dd44871424c905419f84de709e49817&amp;type=3#Pineapple&apos;); width: 75px; height: 75px; -unity-background-scale-mode: stretch-to-fill; margin-left: 16px;" />
+                    <ui:Label name="Pineapple" tabindex="-1" text="PINEAPPLE: 0" display-tooltip-when-elided="true" style="color: rgb(238, 238, 238); font-size: 16px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Button text="Connect wallet." display-tooltip-when-elided="true" name="Connect" />
+            <ui:Button class="Hidden" text="Fetch account data." display-tooltip-when-elided="true" name="FetchAccount"  />
+        </ui:VisualElement>
+        <ui:Label tabindex="-1" text="Select one NFT you have." display-tooltip-when-elided="true" style="color: rgb(238, 238, 238); white-space: normal; font-size: 16px; -unity-text-align: upper-center; width: 100%; height: 25px; margin-top: 30px;" />
+        <ui:Label class="Hidden" name="warning" tabindex="-1" text="It may take a while for covalent to update its balance." display-tooltip-when-elided="true" style="color: rgb(238, 238, 238); white-space: normal; font-size: 16px; -unity-text-align: upper-center; width: 100%; height: 25px; margin-top: 30px;" />
+        <ui:VisualElement class="Hidden" name="NFTcontainer" style="flex-direction: row; background-color: rgb(33, 32, 49); justify-content: center; align-items: flex-start;">
+            <ui:VisualElement style="width: 150px; align-items: center; justify-content: center; flex-direction: column;">
+                <ui:VisualElement style="width: 75px; height: 75px; background-image: url(&apos;project://database/Assets/Sample/Game/Metadata/Images/Ninja_frog.png?fileID=2800000&amp;guid=f96c11d17778bd6468d78f8c75ab1f0e&amp;type=3#Ninja_frog&apos;);" />
+                <ui:Button class="Hidden" name="NFTSelect1" text="Select Ninja Frog" display-tooltip-when-elided="true" style="font-size: 14px; -unity-font-style: bold;" />
+                <ui:Button class="Show" name="NFTMint1" text="Mint Ninja Frog" display-tooltip-when-elided="true" style="font-size: 14px; -unity-font-style: bold;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="width: 150px; align-items: center; justify-content: center; flex-direction: column;">
+                <ui:VisualElement style="width: 75px; height: 75px; background-image: url(&apos;project://database/Assets/Sample/Game/Metadata/Images/Virtual_Guy.png?fileID=2800000&amp;guid=f31c4183ba20746479ca3e30b8133b38&amp;type=3#Virtual_Guy&apos;);" />
+                <ui:Button class="Hidden"  name="NFTSelect2" text="Select Virtual Guy" display-tooltip-when-elided="true"  style="font-size: 14px; -unity-font-style: bold;" />
+                <ui:Button class="Show" name="NFTMint2" text="Mint Virtual Guy" display-tooltip-when-elided="true" style="font-size: 14px; -unity-font-style: bold;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="width: 150px; align-items: center; justify-content: center; flex-direction: column;">
+                <ui:VisualElement style="width: 75px; height: 75px; background-image: url(&apos;project://database/Assets/Sample/Game/Metadata/Images/Pink_Man.png?fileID=2800000&amp;guid=1d2f68d2dc0e8c74d88d52471f4d2f1d&amp;type=3#Pink_Man&apos;);" />
+                <ui:Button class="Hidden" name="NFTSelect3" text="Select Pink Man" display-tooltip-when-elided="true"  style="font-size: 14px; -unity-font-style: bold;" />
+                <ui:Button class="Show" name="NFTMint3" text="Mint Pink Man" display-tooltip-when-elided="true" style="font-size: 14px; -unity-font-style: bold;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="width: 150px; align-items: center; justify-content: center; flex-direction: column;">
+                <ui:VisualElement style="width: 75px; height: 75px; background-image: url(&apos;project://database/Assets/Sample/Game/Metadata/Images/Mask_Dude.png?fileID=2800000&amp;guid=e784e1dd959a6614f8042f06cd734190&amp;type=3#Mask_Dude&apos;);" />
+                <ui:Button class="Hidden" name="NFTSelect4" text="Select Mask Dude" display-tooltip-when-elided="true" style="font-size: 14px; -unity-font-style: bold;" />
+                <ui:Button class="Show" name="NFTMint4" text="Mint Mask Dude" display-tooltip-when-elided="true" style="font-size: 14px; -unity-font-style: bold;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
