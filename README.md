@@ -1,9 +1,31 @@
 # evmos-covalent-unity-webgl
-this plugin for unity helps create web games using EVMOS evm smart contracts and fetch data using cavolant
+this plugin for unity helps create web games using [EVMOS](http://evmos.org/) evm smart contracts and fetch data using [Cavolant](https://www.covalenthq.com/)
 ![Game](https://user-images.githubusercontent.com/52639395/204915702-7d663013-c2d2-470f-bcaf-f3a114c2f7dc.jpg)
+the plugin automatically connects you to the evmos testnet,
+
 
 # Wallet
 ### EVM.Wallet
+Connect to web wallet and return the main address of that wallet.
+```Csharp
+ public static extern void WalletConnect();
+```
+Request the native token balance.
+```Csharp
+  public static extern void WalletBalance();
+```
+Get the native token balance.
+```Csharp
+ public static string getBalance
+```
+Get the main address of that wallet.
+```Csharp
+public static string getAddress
+```
+Get last transcation hash.
+```Csharp
+public static string getTxHash
+```
 ### EVM.ERC20
 #### name()
 Returns the name of the token.\
