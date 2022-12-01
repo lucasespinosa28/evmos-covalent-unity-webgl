@@ -5,8 +5,30 @@
 # Wallet
 ### EVM.Wallet
 ### EVM.ERC20
+Returns the name of the token.
+**[contract]:** Address of contract you want to use.
 ```Csharp
+private static extern void RequestERC20Name(string contract);
+```
+**[contract]:** Address of contract you want to use.
+```Csharp
+private static extern void RequestERC20Symbol(string contract);
+```
+**[contract]:** Address of contract you want to use.
+```Csharp
+private static extern void RequestERC20Decimals(string contract);
+```
+**[contract]:** Address of contract you want to use.
+```Csharp
+ private static extern void RequestERC20TotalSupply(string contract);
+```
+**[contract]:** Address of contract you want to use.
+```Csharp
+private static extern void RequestERC20BalanceOf(string contract,string account);
+```
+
 Returns the name of the Last contract called token.
+```Csharp
 public static string getName;
 ```
 Returns the name of the Last contract called Symbol.
