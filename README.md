@@ -49,6 +49,13 @@ void ERC20Symbol(string value)
  Debug.Log(value);
 }
 ```
+### Using Covalanet
+The plugin have class A endpoits ready to use on unity csharp, to have inteire example go in ```Assets/Tests```
+```Csharp
+Covalent.Settings.Apikey = ""
+Covalent.Settings.ChainId = "9001"
+var result = await Covalent.Base.AsyncGetblock("latest");
+````
 # Wallet
 ### EVM.Wallet
 Connect to web wallet and return the main address of that wallet.
