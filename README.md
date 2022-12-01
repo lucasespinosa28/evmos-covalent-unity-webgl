@@ -1,5 +1,5 @@
 # evmos-covalent-unity-webgl
-# [Plugin](https://github.com/lucasespinosa28/evmos-covalent-unity-webgl/releases/tag/beta) , [Demo]()
+# [Plugin](https://github.com/lucasespinosa28/evmos-covalent-unity-webgl/releases/tag/beta) , [Demo](https://lucasespinosa28.github.io/evmos-covalent-unity-webgl/)
 this plugin for unity helps create web games using [EVMOS](http://evmos.org/) evm smart contracts and fetch data using [Cavolant](https://www.covalenthq.com/)
 ![Game](https://user-images.githubusercontent.com/52639395/204915702-7d663013-c2d2-470f-bcaf-f3a114c2f7dc.jpg)
 the plugin have a unity wegbl tamplete and connect your automatically connects you to the evmos testnet.
