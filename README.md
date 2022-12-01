@@ -86,18 +86,42 @@ Returns the name of the Last contract called Balance.
   public static string getBalanceOf;
 ```
 ### EVM.ERC1155
-
+Returns the URI for token type id. If the {id} substring is present in the URI, it must be replaced by clients with the actual token type ID.
 ```Csharp
 public void Uri(string value)
 ```
+Returns the amount of tokens of token type id owned by account.Requirements: account cannot be the zero address.
 ```Csharp
 public void BalanceOf(string value)
 ```
+Batched version of balanceOf.Requirements:accounts and ids must have the same length.
 ```Csharp
  public void BalanceOfBatch(string value)
 ```
+Grants or revokes permission to operator to transfer the caller’s tokens, according to approved.Emits an ApprovalForAll event. Requirements: operator cannot be the caller.
 ```Csharp
 public void IsApprovedForAll(string value)
+```
+Returns true if operator is approved to transfer account's tokens. See setApprovalForAll.
+Transfers amount tokens of token type id from from to to.Emits a TransferSingle event.Requirements:to cannot be the zero address.If the caller is not from, it must have been approved to spend from's tokens via setApprovalForAll.from must have a balance of tokens of type id of at least amount.If to refers to a smart contract, it must implement
+Emitted when value tokens of token type id are transferred from from to to by operator.
+Equivalent to multiple TransferSingle events, where operator, from and to are the same for all transfers.
+Emitted when account grants or revokes permission to operator to transfer their tokens, according to approved.
+Returns last url of the contract tokens.
+```Csharp
+public static string getUri
+```
+Returns last  balance of token.
+```Csharp
+public static string getBalanceOf
+```
+Returns last array balance of tokens.
+```Csharp
+public static string getBalanceOfBatch
+```
+Returns last contract allows to use the token.
+```Csharp
+public static string getIsApprovedForAll
 ```
 # covalent
 
