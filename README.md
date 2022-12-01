@@ -103,10 +103,29 @@ Grants or revokes permission to operator to transfer the caller’s tokens, acco
 public void IsApprovedForAll(string value)
 ```
 Returns true if operator is approved to transfer account's tokens. See setApprovalForAll.
-Transfers amount tokens of token type id from from to to.Emits a TransferSingle event.Requirements:to cannot be the zero address.If the caller is not from, it must have been approved to spend from's tokens via setApprovalForAll.from must have a balance of tokens of type id of at least amount.If to refers to a smart contract, it must implement
+```Csharp
+ public static extern void RequestERC1155IsApprovedForAll(string contract,string account, string _operator);
+```
+Transfers amount tokens of token type id from from to to.Emits a TransferSingle event.Requirements:to cannot be the zero address.If the caller is not from, it must have been approved to spend from's tokens via setApprovalForAll.from must have a balance of tokens of type id of at least amount.If to refers to a smart contract, it must implement.
+```Csharp
+public static extern void SendERC1155TransferSingle(string contract,string _operator, string from, string to , int id, long amount,string data);
+```
+Batched version of safeTransferFrom.Emits a TransferBatch event.Requirements:ids and amounts must have the same length.If to refers to a smart contract, it must implement IERC1155Receiver.onERC1155BatchReceived and return the acceptance magic value
+```Csharp
+ public static extern void SendERC1155SafeBatchTransferFrom(string contract,string from, string to, int id, long amount,string data)
+```
 Emitted when value tokens of token type id are transferred from from to to by operator.
+```Csharp
+  public static extern void SendERC1155SafeBatchTransferFrom(string contract,string from, string to, int id, long amount,string data)
+```
 Equivalent to multiple TransferSingle events, where operator, from and to are the same for all transfers.
+```Csharp
+public static extern void SendERC1155TransferBatch(string contract,string _operator, string from, string to , int[] id, long[] amount,string data)
+```
 Emitted when account grants or revokes permission to operator to transfer their tokens, according to approved.
+```Csharp
+public static extern void SendERC1155ApprovalForAll(string contract,string account,string _operator,bool approved)
+```
 Returns last url of the contract tokens.
 ```Csharp
 public static string getUri
