@@ -1,9 +1,54 @@
 # evmos-covalent-unity-webgl
 this plugin for unity helps create web games using [EVMOS](http://evmos.org/) evm smart contracts and fetch data using [Cavolant](https://www.covalenthq.com/)
 ![Game](https://user-images.githubusercontent.com/52639395/204915702-7d663013-c2d2-470f-bcaf-f3a114c2f7dc.jpg)
-the plugin automatically connects you to the evmos testnet,
+the plugin have a unity wegbl tamplete and connect your automatically connects you to the evmos testnet.
+#### Example how connect into evm wallet
+```Csharp
+EVM.Wallet.WalletConnect();
+```
+#### After connected is possible to get the wallet address to confirm connection
+```Csharp
+EVM.Wallet.getAddress
+```
+#### Calling custom contract
+In ```Assets/WebGLTemplates/Evmos/TemplateData``` create a js file and attach it in index.html.\
+The template uses [ethers](https://docs.ethers.io/v5/), the difference is that one function to call the contract and other function to pass the resulto to unity.
+```js
+const CustomContract = {
+ Unity: {
+  Symbol: function(symbol){
+  myGameInstance.SendMessage('GameObject', 'ERC20Symbol', symbol);
+  }
+ },
+ Browser:  
+  Symbol: async  function(contract){
+  const Contract = new ethers.Contract(contract, erc20Abi, Settings.Provider);
+  const result = await Contract.symbol()
+  ERC20.Unity.Symbol(result.toString());
+  },
+ }
+}
+```
+In ```Assets/Plugins/evms.jslib```,
+The **jslib** builds a bridge between your Javascript code and your csharp code in unity
+```js
+NameOfFunction: async  function(contract,id){
+        CustomContract.Browser.Symbol(UTF8ToString(contract))
+    }
+```
+In your unity asset folder add the csharp
+```Csharp
+using System.Runtime.InteropServices;
+// The method void will call the function in jslib and it will call the function in javascript.
+[DllImport("__Internal")]
+private static extern void RequestERC20Symbol(string contract);
 
-
+// the function with SendMessage will use this method to display the result when calling a contract.
+void ERC20Symbol(string value)
+{
+ Debug.Log(value);
+}
+```
 # Wallet
 ### EVM.Wallet
 Connect to web wallet and return the main address of that wallet.
