@@ -5,28 +5,59 @@
 # Wallet
 ### EVM.Wallet
 ### EVM.ERC20
-Returns the name of the token.
+
+Returns the name of the token.\
 **[contract]:** Address of contract you want to use.
 ```Csharp
 private static extern void RequestERC20Name(string contract);
 ```
+
+Returns the symbol of the token.\
 **[contract]:** Address of contract you want to use.
 ```Csharp
 private static extern void RequestERC20Symbol(string contract);
 ```
+
+Returns the decimals places of the token.\
 **[contract]:** Address of contract you want to use.
 ```Csharp
 private static extern void RequestERC20Decimals(string contract);
 ```
+
+Returns the amount of tokens in existence.\
 **[contract]:** Address of contract you want to use.
 ```Csharp
  private static extern void RequestERC20TotalSupply(string contract);
 ```
-**[contract]:** Address of contract you want to use.
+
+Returns the amount of tokens owned by account.\
+**[contract]:** Address of contract you want to use.\
+**[account]:** Address of user balance.
 ```Csharp
 private static extern void RequestERC20BalanceOf(string contract,string account);
 ```
 
+Moves amount tokens from the caller’s account to to. Returns a boolean value indicating whether the operation succeeded.Emits a transfer event.\
+**[contract]:** Address of contract you want to use.\
+**[to]:** Address of contract you want to use.\
+**[amount]:** Amount of token to transfer.
+```Csharp
+private static extern void SendERC20Transfer(string contract,string to,long amount);
+```
+Returns the remaining number of tokens that spender will be allowed to spend on behalf of owner through transferFrom. This is zero by default. This value changes when approve or transferFrom are called.\
+**[contract]:** Address of contract you want to use.\
+**[owner]:** Owner of token.\
+**[spender]:** Contract allowed to use its token.
+```Csharp
+private static extern void SendERC20Allowance(string contract,string owner,string spender); 
+```
+Sets amount as the allowance of spender over the caller’s tokens. Returns a boolean value indicating whether the operation succeeded.\
+**[contract]:** Address of contract you want to use.\
+**[sender]:** Contract allowed to use its token.\
+**[amount]:** Aunt of tokens allowed to use is the contract.
+```Csharp
+ private static extern void SendERC20Approve(string contract,string sender,long amount);
+```
 Returns the name of the Last contract called token.
 ```Csharp
 public static string getName;
