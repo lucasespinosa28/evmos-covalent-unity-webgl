@@ -5,31 +5,34 @@
 # Wallet
 ### EVM.Wallet
 ### EVM.ERC20
-
+#### name()
 Returns the name of the token.\
 **[contract]:** Address of contract you want to use.
 ```Csharp
 private static extern void RequestERC20Name(string contract);
 ```
-
+#### symbol()
 Returns the symbol of the token.\
 **[contract]:** Address of contract you want to use.
 ```Csharp
 private static extern void RequestERC20Symbol(string contract);
 ```
 
+#### decimals()
 Returns the decimals places of the token.\
 **[contract]:** Address of contract you want to use.
 ```Csharp
 private static extern void RequestERC20Decimals(string contract);
 ```
 
+#### totalSupply()
 Returns the amount of tokens in existence.\
 **[contract]:** Address of contract you want to use.
 ```Csharp
  private static extern void RequestERC20TotalSupply(string contract);
 ```
 
+#### balanceOf(address account)
 Returns the amount of tokens owned by account.\
 **[contract]:** Address of contract you want to use.\
 **[account]:** Address of user balance.
@@ -37,6 +40,7 @@ Returns the amount of tokens owned by account.\
 private static extern void RequestERC20BalanceOf(string contract,string account);
 ```
 
+#### transfer(address to, uint256 amount) → bool
 Moves amount tokens from the caller’s account to to. Returns a boolean value indicating whether the operation succeeded.Emits a transfer event.\
 **[contract]:** Address of contract you want to use.\
 **[to]:** Address of contract you want to use.\
@@ -44,6 +48,8 @@ Moves amount tokens from the caller’s account to to. Returns a boolean value i
 ```Csharp
 private static extern void SendERC20Transfer(string contract,string to,long amount);
 ```
+
+#### allowance(address owner, address spender) → uint256
 Returns the remaining number of tokens that spender will be allowed to spend on behalf of owner through transferFrom. This is zero by default. This value changes when approve or transferFrom are called.\
 **[contract]:** Address of contract you want to use.\
 **[owner]:** Owner of token.\
@@ -51,6 +57,7 @@ Returns the remaining number of tokens that spender will be allowed to spend on 
 ```Csharp
 private static extern void SendERC20Allowance(string contract,string owner,string spender); 
 ```
+#### approve(address spender, uint256 amount) → bool
 Sets amount as the allowance of spender over the caller’s tokens. Returns a boolean value indicating whether the operation succeeded.\
 **[contract]:** Address of contract you want to use.\
 **[sender]:** Contract allowed to use its token.\
@@ -79,6 +86,19 @@ Returns the name of the Last contract called Balance.
   public static string getBalanceOf;
 ```
 ### EVM.ERC1155
+
+```Csharp
+public void Uri(string value)
+```
+```Csharp
+public void BalanceOf(string value)
+```
+```Csharp
+ public void BalanceOfBatch(string value)
+```
+```Csharp
+public void IsApprovedForAll(string value)
+```
 # covalent
 
 ### Covalent.Settings
