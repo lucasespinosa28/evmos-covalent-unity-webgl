@@ -5,6 +5,26 @@
 # Wallet
 ### EVM.Wallet
 ### EVM.ERC20
+```Csharp
+Returns the name of the Last contract called token.
+public static string getName;
+```
+Returns the name of the Last contract called Symbol.
+```Csharp
+public static string getSymbo;
+```
+Returns the name of the Last contract called Decimals.
+```Csharp
+ public static string getDecimals;
+```
+Returns the name of the Last contract called Total Supply.
+```Csharp
+public static string getTotalSupply;
+```
+Returns the name of the Last contract called Balance.
+```Csharp
+  public static string getBalanceOf;
+```
 ### EVM.ERC1155
 # covalent
 
